@@ -21,5 +21,14 @@ class TestGeoLocationRandomizer(unittest.TestCase):
             self.assertGreaterEqual(lon, self.LONGITUDE_RANGE[0], "Longitude is below minimum range")
             self.assertLessEqual(lon, self.LONGITUDE_RANGE[1], "Longitude exceeds maximum range")
 
+    def test_location_outside_range_of_nl(self):
+        for _ in range(self.repeat_count):
+            lat, lon = generate_random_location((8.09008, 34.55765), (68.82655, 96.12882))
+            self.assertLessEqual(lat, self.LATITUDE_RANGE[0], "Latitude is below minimum range")
+            self.assertLessEqual(lat, self.LATITUDE_RANGE[1], "Latitude exceeds maximum range")
+            self.assertGreaterEqual(lon, self.LONGITUDE_RANGE[0], "Longitude is below minimum range")
+            self.assertGreaterEqual(lon, self.LONGITUDE_RANGE[1], "Longitude exceeds maximum range")
+
+
 if __name__ == "__main__":
     unittest.main()
