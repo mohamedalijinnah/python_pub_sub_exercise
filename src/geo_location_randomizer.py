@@ -1,6 +1,8 @@
 from random import uniform
 
-def generate_random_location(latitude_range, longitude_range):
-    lat = uniform(latitude_range[0], latitude_range[1])
-    lon = uniform(longitude_range[0], longitude_range[1])
-    return lat, lon
+class GeoLocationRandomizer:
+
+    def generate_random_location(latitude_range, longitude_range):
+        lat = uniform(latitude_range[0], latitude_range[1])
+        lon = uniform(longitude_range[0], longitude_range[1])
+        return lat, lon
