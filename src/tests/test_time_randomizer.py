@@ -1,11 +1,7 @@
-import sys
-import os 
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 import unittest
 
-from publisher.time_randomizer import TimeRandomizer
-from const import SECONDS_RANGE
+from src.publisher.time_randomizer import TimeRandomizer
+from src.const import SECONDS_RANGE
 
 class TestTimeRandomizer(unittest.TestCase):
 

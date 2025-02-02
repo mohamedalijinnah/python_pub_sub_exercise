@@ -1,12 +1,7 @@
-import sys
-import os 
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 import unittest
 
-from publisher.geo_location_height_randomizer import HeightRandomizer
-
-from const import HEIGHT_RANGE
+from src.const import HEIGHT_RANGE
+from src.publisher.geo_location_height_randomizer import HeightRandomizer
 
 class TestHeightRandomizer(unittest.TestCase):
 

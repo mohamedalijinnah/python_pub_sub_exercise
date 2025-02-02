@@ -1,13 +1,7 @@
-import sys
-import os
-
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-
 import unittest
 from unittest.mock import MagicMock
 
-from publisher.geo_location_packet_generator import GeoLocationPacketGenerator
+from src.publisher.geo_location_packet_generator import GeoLocationPacketGenerator
 
 class TestGeoLocationPacketGenerator(unittest.TestCase):
     def test_generate_geo_location_packet_generator(self):

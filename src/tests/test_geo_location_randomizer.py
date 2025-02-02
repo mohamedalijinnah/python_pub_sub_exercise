@@ -1,10 +1,5 @@
-import sys
-import os
-
-from publisher.geo_location_randomizer import GeoLocationRandomizer
-from const import NL_LAT_LONG_BOUNDARY 
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+from src.publisher.geo_location_randomizer import GeoLocationRandomizer
+from src.const import NL_LAT_LONG_BOUNDARY
 import unittest
 
 
@@ -12,7 +7,7 @@ class TestGeoLocationRandomizer(unittest.TestCase):
     repeat_count = 1000
     def setUp(self):
         self.LATITUDE_RANGE = NL_LAT_LONG_BOUNDARY[0]
-        self.LONGITUDE_RANGE = NL_LAT_LONG_BOUNDARY[1]
+        self.LONGITUDE_RANGE =NL_LAT_LONG_BOUNDARY[1]
 
     def test_location_within_range(self):
         location_randomizer = GeoLocationRandomizer()

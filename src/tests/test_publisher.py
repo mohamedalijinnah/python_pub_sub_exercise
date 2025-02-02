@@ -2,13 +2,13 @@ import sys
 import os
 
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'publisher')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'publisher')))
 import unittest
 from unittest.mock import patch, MagicMock
 import json
 import socket
 
-from publisher.publisher import GeoLocationPublisher
+from src.publisher.publisher import GeoLocationPublisher
 
 class TestInstancePublisher(unittest.TestCase):
     @patch("socket.socket")
