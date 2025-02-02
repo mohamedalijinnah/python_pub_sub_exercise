@@ -9,9 +9,9 @@ class Aggregator:
         if not packets:
             return
         
-        avg_lat = sum(p["geo_location"]["latitude"] for p in packets) / len(packets)
-        avg_lon = sum(p["geo_location"]["longitude"] for p in packets) / len(packets)
-        avg_height = sum(p["geo_location"]["height"] for p in packets) / len(packets)
+        avg_lat = round(sum(p["geo_location"]["latitude"] for p in packets) / len(packets), 2)
+        avg_lon = round(sum(p["geo_location"]["longitude"] for p in packets) / len(packets), 2)
+        avg_height = round(sum(p["geo_location"]["height"] for p in packets) / len(packets), 2)
         
         result = f"Time: {bucket}, Avg Position: ({avg_lat}, {avg_lon}, {avg_height})"
         print(result)

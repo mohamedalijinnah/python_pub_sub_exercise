@@ -1,14 +1,13 @@
 import socket
-import json
 
 from const import BROADCAST_PORT
 from packet_processor import PacketProcessor
 
 class Consumer:
-    def __init__(self):
+    def __init__(self, packet_processor):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock.bind(("", BROADCAST_PORT))
-        self.packet_processor = PacketProcessor()
+        self.packet_processor = packet_processor
 
     def listen(self, isTest=False):
         while True:
@@ -18,5 +17,6 @@ class Consumer:
                 break
 
 if __name__ == "__main__":
-    consumer = Consumer()
+    packetProcessor = PacketProcessor()
+    consumer = Consumer(packetProcessor)
     consumer.listen()
