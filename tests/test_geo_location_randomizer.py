@@ -7,7 +7,7 @@ from const import NL_LAT_LONG_BOUNDARY
 from geo_location_randomizer import generate_random_location
 
 class TestGeoLocationRandomizer(unittest.TestCase):
-    repeat_count = 100
+    repeat_count = 1000
     def setUp(self):
         self.LATITUDE_RANGE = NL_LAT_LONG_BOUNDARY[0]
         self.LONGITUDE_RANGE = NL_LAT_LONG_BOUNDARY[1]

@@ -4,9 +4,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 's
 import unittest
 
 from height_randomizer import generate_random_height
+
 from const import HEIGHT_RANGE
 
-class TestTimeRandomizer(unittest.TestCase):
+class TestHeightRandomizer(unittest.TestCase):
 
     def test_random_height_inside_range(self):
         for _ in range(1000):
