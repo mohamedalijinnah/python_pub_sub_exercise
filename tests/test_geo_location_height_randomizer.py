@@ -6,7 +6,7 @@ import unittest
 
 from publisher.geo_location_height_randomizer import HeightRandomizer
 
-from publisher.utils.const import HEIGHT_RANGE
+from const import HEIGHT_RANGE
 
 class TestHeightRandomizer(unittest.TestCase):
 

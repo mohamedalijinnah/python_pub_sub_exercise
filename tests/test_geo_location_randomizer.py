@@ -2,7 +2,7 @@ import sys
 import os
 
 from publisher.geo_location_randomizer import GeoLocationRandomizer
-from publisher.utils.const import NL_LAT_LONG_BOUNDARY 
+from const import NL_LAT_LONG_BOUNDARY 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 import unittest

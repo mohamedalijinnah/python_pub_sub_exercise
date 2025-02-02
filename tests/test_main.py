@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 's
 import unittest
 
 from main import publish_geo_data
-from publisher.utils.const import NL_LAT_LONG_BOUNDARY
+from const import NL_LAT_LONG_BOUNDARY
 
 class TestMain(unittest.TestCase):
 

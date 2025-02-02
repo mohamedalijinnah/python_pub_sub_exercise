@@ -1,5 +1,4 @@
-
-from publisher.utils.const import HEIGHT_RANGE, NL_LAT_LONG_BOUNDARY
+from const import HEIGHT_RANGE, NL_LAT_LONG_BOUNDARY
 
 class GeoLocationGenerator:
     def __init__(self, location_randomizer, height_randomizer):
