@@ -11,7 +11,7 @@ class Consumer:
 
     def listen(self, isTest=False):
         while True:
-            data, _ = self.sock.recvfrom(1024)
+            data, _  = self.sock.recvfrom(1024)
             self.packet_processor.process_packet(data)
             if isTest:
                 break
