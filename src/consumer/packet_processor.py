@@ -16,6 +16,8 @@ class PacketProcessor:
     def process_packet(self, data):
         packet = json.loads(data)
         print(packet)
+        if not packet:
+         return None
         time_stamp = packet['timestamp']
         time_bucket = datetime.fromtimestamp(time_stamp).replace(microsecond=0)
         self.records[time_bucket].append(packet)
