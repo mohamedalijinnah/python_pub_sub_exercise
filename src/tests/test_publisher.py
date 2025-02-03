@@ -51,7 +51,7 @@ class TestInstancePublisher(unittest.TestCase):
  
         mock_sleep.return_value = None
 
-        GeoLocationPublisher("test-instance-123", mock_packet_generator_instance, mock_time_randomizer_instance).instance_publisher(isTest=True) 
+        GeoLocationPublisher(mock_packet_generator_instance, mock_time_randomizer_instance).instance_publisher(isTest=True) 
         
         mock_socket.assert_called_once_with(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)  
         mock_sock.setsockopt.assert_called_once_with(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)

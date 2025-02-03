@@ -11,10 +11,9 @@ from geo_location_randomizer import GeoLocationRandomizer
 from time_randomizer import TimeRandomizer
 
 class GeoLocationPublisher:
-    def __init__(self, instance_id, geo_location_packet_generator, time_randomizer):
+    def __init__(self,geo_location_packet_generator, time_randomizer):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-        self.instance_id = instance_id
         self.geo_location_packet_generator = geo_location_packet_generator
         self.time_randomizer = time_randomizer
 
@@ -29,5 +28,5 @@ class GeoLocationPublisher:
             
 
 if __name__ == "__main__":
-    publisher = GeoLocationPublisher(uuid.uuid4().hex, GeoLocationPacketGenerator(uuid.uuid4().hex, GeoLocationGenerator(GeoLocationRandomizer(), HeightRandomizer())), TimeRandomizer())
+    publisher = GeoLocationPublisher(GeoLocationPacketGenerator(uuid.uuid4().hex, GeoLocationGenerator(GeoLocationRandomizer(), HeightRandomizer())), TimeRandomizer())
     publisher.instance_publisher()

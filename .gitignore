@@ -170,3 +170,4 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 src/test_log.txt
+test_log.txt
