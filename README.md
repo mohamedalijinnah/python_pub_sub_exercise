@@ -50,8 +50,20 @@ Consumer
 
 ![system architecture](image-1.png)
 
+Sample test executions:
+
+Publishers triggered with 5 instances
+
+![image](https://github.com/user-attachments/assets/ea454c3c-cef4-405c-925e-a6895498ee46)
+
+Consumer
+
+![image](https://github.com/user-attachments/assets/dd97deff-534d-4d29-a701-47a8d2fd16dc)
 
 
+results are stored in a log file
+
+![image](https://github.com/user-attachments/assets/edbfb6d4-104a-4691-b230-eeabe935d723)
 
 
 
