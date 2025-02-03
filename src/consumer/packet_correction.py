@@ -13,9 +13,9 @@ class PacketCorrection:
             
             packets = self.records[past_bucket]
             updated_packets = packets + [new_packet]
-            avg_lat = sum(p["geo_location"]["latitude"] for p in updated_packets) / len(updated_packets)
-            avg_lon = sum(p["geo_location"]["longitude"] for p in updated_packets) / len(updated_packets)
-            avg_height = sum(p["geo_location"]["height"] for p in updated_packets) / len(updated_packets)
+            avg_lat = round(sum(p["geo_location"]["latitude"] for p in updated_packets) / len(updated_packets),2)
+            avg_lon = round(sum(p["geo_location"]["longitude"] for p in updated_packets) / len(updated_packets),2)
+            avg_height = round(sum(p["geo_location"]["height"] for p in updated_packets) / len(updated_packets),2)
             
             correction = f"Correction: Time: {past_bucket}, New Avg Position: ({avg_lat}, {avg_lon}, {avg_height})"
             print(correction)

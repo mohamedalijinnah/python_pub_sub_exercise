@@ -1,3 +1,4 @@
+import json
 import unittest
 from unittest.mock import patch, MagicMock
 
@@ -28,13 +29,13 @@ class TestConsumer(unittest.TestCase):
         self.assertIsInstance(self.consumer.packet_processor, MagicMock) 
 
     def test_consumer_listen(self):
-        test_data = b'{"instance_id": "123", "geo_location": {"latitude": 52.1, "longitude": 5.2, "height": 100}, "timestamp": 1700000000.0}'
+        test_data = {"instance_id": "123", "geo_location": {"latitude": 52.1, "longitude": 5.2, "height": 100}, "timestamp": 1700000000.0}
         
-        self.mock_sock.recvfrom.return_value = {test_data, ("localhost", BROADCAST_PORT)}
+        self.mock_sock.recvfrom.return_value =  (json.dumps(test_data).encode(), ('localhost', 3000))
         
         self.consumer.listen(isTest=True)
 
-        self.mock_processor.process_packet.assert_called_once_with(b'{"instance_id": "123", "geo_location": {"latitude": 52.1, "longitude": 5.2, "height": 100}, "timestamp": 1700000000.0}') 
+        self.mock_processor.process_packet.assert_called_once_with(json.dumps(test_data).encode()) 
 
     def test_consumer_listen_no_data(self):
         self.mock_sock.recvfrom.return_value = {b"", ("localhost", 3000)}
